@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>app_central - Sistema de Automação Empresarial</title>
-  <meta content="Sistema centralizado de automação empresarial desenvolvido em Python" name="description">
-  <meta content="automação, python, sistemas, empresarial, app_central" name="keywords">
+  <title>QA.Automacao.Leilao - Testes Automatizados com Selenium</title>
+  <meta content="Projeto de testes automatizados desenvolvido em C# com Selenium WebDriver" name="description">
+  <meta content="automação, testes, selenium, c#, qa, webdriver" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -56,12 +56,12 @@
     <!-- Page Title -->
     <div class="page-title" data-aos="fade">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">app_central - Sistema de Automação</h1>
+        <h1 class="mb-2 mb-lg-0">QA.Automacao.Leilao - Testes Automatizados</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#portfolio">Portfolio</a></li>
-            <li class="current">app_central</li>
+            <li class="current">QA.Automacao.Leilao</li>
           </ol>
         </nav>
       </div>
@@ -93,13 +93,13 @@
           <div class="swiper-wrapper align-items-center">
 
             <div class="swiper-slide">
-              <img src="automacao/Capturar.PNG" alt="Interface principal do app_central">
+              <img src="csharpselenium/QAAutomacao.PNG" alt="Interface do projeto QA.Automacao.Leilao">
             </div>
 
             <!-- Video slide -->
             <div class="swiper-slide">
               <video width="100%" height="auto" controls>
-                <source src="automacao/app-central-demo.mp4" type="video/mp4">
+                <source src="csharpselenium/QAAutomacaoSelenium.mp4" type="video/mp4">
                 Seu navegador não suporta o elemento de vídeo.
               </video>
             </div>
@@ -114,53 +114,87 @@
 
           <div class="col-lg-8" data-aos="fade-up">
             <div class="portfolio-description">
-              <h2>🎯 Sistema de Automação Empresarial app_central</h2>
+              <h2>📘 Projeto de Testes Automatizados com Selenium em C# - QA.Automacao.Leilao</h2>
               <p>
-                O <strong>app_central</strong> é uma aplicação centralizada desenvolvida em <strong>Python</strong>, com arquitetura modular e foco em <strong>automação de processos empresariais</strong>. Seu objetivo é integrar diferentes sistemas, reduzir tempo operacional e melhorar a confiabilidade das operações internas.
+                O <strong>QA.Automacao.Leilao</strong> é um projeto desenvolvido com o objetivo de demonstrar <strong>testes automatizados</strong> utilizando <strong>Selenium WebDriver com C#</strong>. A arquitetura adotada segue boas práticas como o <strong>padrão Page Object</strong> e a organização dos testes considerando o conceito de pirâmide de testes (Unit > Service > UI).
               </p>
 
-              <h3>⚙️ Funcionalidades Principais</h3>
+              <h3>🧰 Tecnologias e Ferramentas Utilizadas</h3>
               <ul>
-                <li>Gerenciamento de múltiplos aplicativos (chatbot, deploy, integração com Docker, Java ERP, etc.)</li>
-                <li>Validação de licenças e controle de acesso</li>
-                <li>Configuração centralizada e segura</li>
-                <li>Automatização de tarefas rotineiras (deploy, backup, clonagem de repositórios)</li>
-                <li>Interface para login e autenticação</li>
-                <li>Suporte a integração com bancos de dados e arquivos</li>
+                <li><strong>C# (.NET)</strong> - Linguagem principal do projeto</li>
+                <li><strong>Selenium WebDriver</strong> - Framework para automação de navegadores</li>
+                <li><strong>ChromeDriver</strong> - Driver para execução no Google Chrome</li>
+                <li><strong>xUnit</strong> - Framework para execução dos testes</li>
+                <li><strong>WebDriverManager</strong> - Gerenciamento automático de drivers</li>
               </ul>
 
-              <h3>🚀 Benefícios e Impacto</h3>
+              <h3>🧱 Estrutura do Projeto</h3>
+              <div class="code-block">
+                <pre>/Tests
+  ├── Fixtures
+  ├── Pages
+  ├── Tests
+  └── Drivers</pre>
+              </div>
               <ul>
-                <li>Redução de tempo operacional com automação</li>
-                <li>Diminuição de erros humanos em tarefas repetitivas</li>
-                <li>Centralização que facilita o monitoramento e controle</li>
-                <li>Melhoria na segurança e conformidade de licenças</li>
-                <li>Facilidade de expansão e integração de novos módulos</li>
+                <li><strong>Page Objects:</strong> Implementação do padrão Page Object para reutilização de código</li>
+                <li><strong>Fixtures:</strong> Contexto compartilhado entre testes (uso de ClassFixture e CollectionFixture)</li>
+                <li><strong>Tests:</strong> Casos de testes organizados por funcionalidade</li>
+              </ul>
+
+              <h3>🔄 Ciclo de Vida dos Testes</h3>
+              <ul>
+                <li>Setup / TearDown com construtores e Dispose()</li>
+                <li>Compartilhamento de contexto com ClassFixture e CollectionFixture</li>
+                <li>Gestão automática do ciclo de vida do WebDriver</li>
+              </ul>
+
+              <h3>🔎 Comandos e Métodos Importantes</h3>
+              <div class="code-block">
+                <pre>driver.Navigate().GoToUrl("...");
+driver.Title;
+driver.PageSource;
+
+element.FindElement(By.Id("..."));
+element.SendKeys("...");
+element.Click();
+element.Submit();
+element.Displayed;
+element.Text;</pre>
+              </div>
+
+              <h3>🧼 Boas Práticas Implementadas</h3>
+              <ul>
+                <li><strong>Page Object Pattern:</strong> Evita repetição de código e melhora a manutenibilidade</li>
+                <li><strong>Separação de responsabilidades:</strong> Clara distinção entre lógica de teste e lógica de navegação</li>
+                <li><strong>Reutilização de contexto:</strong> Uso eficiente de Fixtures para otimizar a execução</li>
+                <li><strong>Testes independentes:</strong> Cada teste pode ser executado isoladamente</li>
+              </ul>
+
+              <h3>🚀 Benefícios e Aprendizados</h3>
+              <ul>
+                <li>Demonstração de proficiência em automação de testes com C#</li>
+                <li>Aplicação de padrões de projeto reconhecidos na indústria</li>
+                <li>Experiência prática com Selenium WebDriver</li>
+                <li>Conhecimento em frameworks de teste (xUnit)</li>
+                <li>Compreensão do ciclo de vida de testes automatizados</li>
               </ul>
 
               <div class="testimonial-item">
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Este projeto demonstra minha capacidade de desenvolver soluções robustas e escaláveis para automação empresarial, utilizando Python e boas práticas de desenvolvimento para criar sistemas que realmente agregam valor ao negócio.</span>
+                  <span>Este projeto representa minha dedicação ao aprendizado contínuo em QA Automation, demonstrando habilidades tanto em desenvolvimento quanto em garantia de qualidade, essenciais para entregar software confiável e de alta qualidade.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <div>
                   <h3>Wenderson Silva</h3>
-                  <h4>Desenvolvedor Python & QA Automation</h4>
+                  <h4>Analista de Testes Pleno & QA Automation</h4>
                 </div>
               </div>
 
-              <h3>📌 Casos de Uso</h3>
-              <ul>
-                <li>Deploy automatizado de aplicações</li>
-                <li>Gerenciamento de chatbots corporativos</li>
-                <li>Clonagem e atualização de repositórios</li>
-                <li>Validação de licenças de software</li>
-              </ul>
-
-              <h3>📈 Resultados</h3>
+              <h3>📈 Resultados e Competências</h3>
               <p>
-                O sistema está em produção e gera renda, demonstrando sua eficácia e valor comercial. Os resultados incluem aumento da produtividade da equipe, maior confiabilidade nos processos internos, redução de custos operacionais e agilidade na implementação de novas soluções.
+                O projeto demonstra competência técnica em automação de testes, evidenciando conhecimento em ferramentas modernas de QA, padrões de desenvolvimento e boas práticas de teste. Representa a capacidade de criar soluções de teste robustas e maintíveis, contribuindo para a qualidade e confiabilidade do software.
               </p>
 
             </div>
@@ -170,13 +204,14 @@
             <div class="portfolio-info">
               <h3>Informações do Projeto</h3>
               <ul>
-                <li><strong>Categoria</strong> Automação Empresarial</li>
-                <li><strong>Tecnologia</strong> Python</li>
-                <li><strong>Status</strong> Em Produção</li>
-                <li><strong>Tipo</strong> Sistema Interno</li>
-                <li><strong>Arquitetura</strong> Modular</li>
-                <li><strong>Foco</strong> Integração de Sistemas</li>
-                <li><a href="automacao/app-central-demo.mp4" class="btn-visit align-self-start" target="_blank">🎥 Ver Demonstração</a></li>
+                <li><strong>Categoria</strong> Automação de Testes</li>
+                <li><strong>Tecnologia</strong> C# / Selenium</li>
+                <li><strong>Status</strong> Concluído</li>
+                <li><strong>Tipo</strong> Projeto Educacional</li>
+                <li><strong>Arquitetura</strong> Page Object</li>
+                <li><strong>Framework</strong> xUnit</li>
+                <li><a href="https://github.com/wendersonw007/Alura.LeilaoOnline" class="btn-visit align-self-start" target="_blank">🔗 Ver no GitHub</a></li>
+                <li><a href="csharpselenium/QAAutomacaoSelenium.mp4" class="btn-visit align-self-start" target="_blank">🎥 Ver Demonstração</a></li>
               </ul>
             </div>
           </div>
@@ -199,7 +234,7 @@
         <a href=""><i class="bi bi-twitter-x"></i></a>
         <a href=""><i class="bi bi-facebook"></i></a>
         <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/wenderson-silva007/"><i class="bi bi-linkedin"></i></a>
       </div>
     </div>
 
